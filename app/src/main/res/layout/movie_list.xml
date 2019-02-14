@@ -29,9 +29,9 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:background="@drawable/shape_toolbar_title_background"
-                android:padding="6dp"
+                android:padding="8dp"
                 android:textColor="@color/white"
-                android:textSize="16sp"
+                android:textSize="18sp"
                 android:textStyle="bold"
                 tools:text="Top Rated" />
         </android.support.v7.widget.Toolbar>

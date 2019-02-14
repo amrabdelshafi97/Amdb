@@ -6,7 +6,7 @@ import android.arch.persistence.room.RoomDatabase
 import android.content.Context
 import amr_ayoub.movieez.model.Movie
 
-@Database(entities = arrayOf(Movie::class), version = 1, exportSchema = false)
+@Database(entities = [Movie::class], version = 1, exportSchema = false)
 abstract class MovieDatabase : RoomDatabase() {
 
     abstract fun userDao(): MovieDao

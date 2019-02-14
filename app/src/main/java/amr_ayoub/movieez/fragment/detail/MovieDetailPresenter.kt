@@ -18,7 +18,7 @@ class MovieDetailPresenter : MovieDetailContract.Presenter {
     override fun checkMovieIsFav(id: Int): Boolean {
         val db = MovieDatabase.getAppDatabase(mView.getAppContext())
         val mMovie = db?.userDao()?.checkIfMovieExist(id)
-        return mMovie != null
+        return mMovie!!.isNotEmpty()
     }
 
     override fun saveMovie(movie: Movie) {

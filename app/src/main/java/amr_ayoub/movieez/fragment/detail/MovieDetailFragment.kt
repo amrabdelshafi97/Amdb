@@ -90,11 +90,8 @@ class MovieDetailFragment : Fragment(), MovieDetailContract.View {
     }
 
     override fun initUI() {
-        if (mPresenter.checkMovieIsFav(mMovie.id)) {
-            mRootView.fab_movie_detail_favourite_button
-                    .setImageResource(R.drawable.ic_favorite_white)
-            mMovieIsFav = true
-        }
+        mRootView.fab_movie_detail_favourite_button
+                .setImageResource(R.drawable.ic_favorite_border_white_24dp)
         mRootView.movie_toolbar.title = mMovie.original_title
         Picasso.get()
                 .load(ApiRoute.BaseBackdropPath + mMovie.backdrop_path)
@@ -118,16 +115,12 @@ class MovieDetailFragment : Fragment(), MovieDetailContract.View {
             startActivity(Intent(Intent.ACTION_VIEW,
                     Uri.parse(ApiRoute.YoutubeBaseUrl + mMovie.trailer?.key)))
         }
-
-        if (mMovieIsFav) {
+        if (mPresenter.checkMovieIsFav(mMovie.id)) {
             mRootView.fab_movie_detail_favourite_button
                     .setImageResource(R.drawable.ic_favorite_white)
             mMovieIsFav = true
-        } else {
-            mRootView.fab_movie_detail_favourite_button
-                    .setImageResource(R.drawable.ic_favorite_border_white_24dp)
-            mMovieIsFav = false
         }
+
         mRootView.fab_movie_detail_favourite_button.setOnClickListener {
             mMovieIsFav = if (mMovieIsFav) {
                 mRootView.fab_movie_detail_favourite_button

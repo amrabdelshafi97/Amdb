@@ -71,6 +71,7 @@ class MainListPresenter : MainListContract.Presenter {
     }
 
     override fun getFavouriteMovies() {
+        mView.setTitle("Favourites")
         val favMovies = MovieDatabase.getAppDatabase(mView.getAppContext())?.userDao()?.allMovies()
         mView.updateRecyclerView(favMovies!!)
     }
