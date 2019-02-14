@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Movieez</string>
+    <string name="title_movie_list">movies</string>
+    <string name="title_movie_detail">movie Detail</string>
+</resources>
